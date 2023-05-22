@@ -63,7 +63,7 @@
   </div>
 </nav>
 <div class="first-container">
-<img id="banner" src="Images/7.png" alt="">
+<img id="banner" src="Images/skincare3.png" alt="">
 
   <div class="left">
     <h1 class="first_container_heading" >something </h1>
@@ -74,7 +74,7 @@
 
 <div class="second_container ">
   
-<div class="row">
+<div class="row gy-5">
 <?php
 $cosrx='cosrx';
 $somebymi='somebymi';
@@ -241,41 +241,87 @@ $ekel='ekel';
 
 </div>
 </div>
-<hr>
-<div class="fourth_container">
+
+<div class="fourth_container row">
   <h2>RECOMMENDED CATEGORIES</h2>
-  <div class="recommendations">
+  <div class="row">
 
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Face Mask</span>
+    </div>
    
-  <a href="Products.php?id=<?php echo md5('face mask') ?>"><div class="rec_cat">
-    <img src="Images/l.png" alt="">
-    <span>Lorem Ipsum</span>
-  </div></a>
+    
+</a>
+   </div>
+ 
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Serum</span>
+    </div>
+   
+    
+</a>
+   </div>
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+ <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+    <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+  
+   
+    
+</a>
+   </div>
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+
+ <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+   
+    
+</a>
+   </div>
+
+
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+   
+    
+</a>
+   </div>
+
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+   
+    
+</a>
+   </div>
+
 
   </div>
 </div>

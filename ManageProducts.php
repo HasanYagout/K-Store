@@ -46,7 +46,7 @@ if(!isset($_SESSION['email'])){
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             
       <li class="nav-item"><a class="nav-link fs-5" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link fs-5" href="Products.php">Products</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="All_Products.php?id=<?php echo md5(0) ?>">Products</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="News.php">News</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="Contact-Us.php">About Us</a></li>
         <li class="nav-item"><a class="nav-link fs-5" id="login" href="Login-Signup.php">Login</a></li>
@@ -55,8 +55,10 @@ if(!isset($_SESSION['email'])){
             Manage
           </a>
           <ul class="dropdown-menu">
-              <a class="nav-link fs-5" href="ManageProducts.php">News</a>
+              <a class="nav-link fs-5" href="ManageProducts.php">Products</a>
               <a class="nav-link fs-5" href="admin/ManageUsers.php">Users</a>
+              <a class="nav-link fs-5" href="ManageNews.php">News</a>
+
           </ul>
       </li>
 
@@ -413,7 +415,7 @@ echo "<li><a class='page-link' href='?page_no=$total_no_of_pages'>Last &rsaquo;&
 				<br style="clear:both;"/>
 				<div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-warning" name="edit"><span class="glyphicon glyphicon-save"></span> Update</button>
+        <button class="btn btn-warning" name="editproduct"><span class="glyphicon glyphicon-save"></span> Update</button>
       </div>
 			</form>
 		</div>

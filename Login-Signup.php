@@ -37,17 +37,19 @@ session_start();
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             
       <li class="nav-item"><a class="nav-link fs-5" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link fs-5" href="Products.php">Products</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="All_Products.php?id=<?php echo md5(0) ?>">Products</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="News.php">News</a></li>
-        <li class="nav-item"><a class="nav-link fs-5" href="Contact-Us.php">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fs-5" href="About.php">About Us</a></li>
         <li class="nav-item"><a class="nav-link fs-5" id="login" href="Login-Signup.php">Login</a></li>
         <li class="dropdown-center nav-item">
           <a class=" dropdown-toggle nav-link fs-5" data-bs-toggle="dropdown" aria-expanded="false">
             Manage
           </a>
           <ul class="dropdown-menu">
-              <a class="nav-link fs-5" href="ManageProducts.php">News</a>
+              <a class="nav-link fs-5" href="ManageProducts.php">Products</a>
               <a class="nav-link fs-5" href="admin/ManageUsers.php">Users</a>
+              <a class="nav-link fs-5" href="ManageNews.php">News</a>
+
           </ul>
       </li>
 

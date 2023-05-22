@@ -1,8 +1,7 @@
-<?php session_start();
+<?php session_start(); 
 if(!isset($_SESSION['email'])){
   header("location:../Login-Signup.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +48,7 @@ if(!isset($_SESSION['email'])){
       <li class="nav-item"><a class="nav-link fs-5" href="index.php">Home</a></li>
       <li class="nav-item"><a class="nav-link fs-5" href="All_Products.php?id=<?php echo md5(0) ?>">Products</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="News.php">News</a></li>
-        <li class="nav-item"><a class="nav-link fs-5" href="About.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fs-5" href="Contact-Us.php">About Us</a></li>
         <li class="nav-item"><a class="nav-link fs-5" id="login" href="Login-Signup.php">Login</a></li>
         <li class="dropdown-center nav-item">
           <a class=" dropdown-toggle nav-link fs-5" data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,7 +56,7 @@ if(!isset($_SESSION['email'])){
           </a>
           <ul class="dropdown-menu">
               <a class="nav-link fs-5" href="ManageProducts.php">Products</a>
-              <a class="nav-link fs-5" href="ManageUsers.php">Users</a>
+              <a class="nav-link fs-5" href="admin/ManageUsers.php">Users</a>
               <a class="nav-link fs-5" href="ManageNews.php">News</a>
 
           </ul>
@@ -211,92 +210,80 @@ echo "<li><a class='page-link' href='?page_no=$total_no_of_pages'>Last &rsaquo;&
 
 
 <div class="table-responsive-sm">
-<button type="button" class="btn btn-primary adduser" data-bs-toggle="modal" data-bs-target="#form_modal" data-bs-whatever="@mdo">Add User</button>
+<button type="button" class="btn btn-primary addnews" data-bs-toggle="modal" data-bs-target="#form_modal" data-bs-whatever="@mdo">Add News</button>
 
 <table class='ManageTable' id='mytable'>
 <thead>
     <tr>
-    <th>No</th>
-        <th>ID.</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Type</th>
+        <th>No</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Paragraph</th>
         <th>Action</th>
+
     </tr>
 </thead>
 <tbody>
-
-				<?php
+<?php
+        $i=1;
 					require 'DB.php';
-          $i=1;
-          
-					$query = mysqli_query($connect, "SELECT * FROM `users`") or die(mysqli_error());
+					$query = mysqli_query($connect, "SELECT * FROM `news`") or die(mysqli_error());
 					while($fetch = mysqli_fetch_array($query)){
 				?>
-				<tr>
-          <?php
-          $id=$fetch['ID'];
-          $querytype="select TYPE from `users` where ID=$id";
-          $resulttype=mysqli_query($connect,$querytype);
-          $row=mysqli_fetch_array($resulttype);
-          ?>
+<tr>
+				
+				
           <td><?php echo $i++ ?></td>
-					<td><?php echo $fetch['ID']?></td>
-					<td><?php echo $fetch['FIRSTNAME']?></td>
-          <td><?php echo $fetch['LASTNAME']?></td>
-          <td><?php echo $fetch['EMAIL']?></td>
-          <td><?php echo $fetch['TYPE']?></td>
-          <td><button type="button" class="btn btn-warning action" data-bs-toggle="modal" data-bs-target="#edit<?php echo $fetch['ID']?>" data-bs-whatever="@mdo"><span class="glyphicon glyphicon-edit"></span>Update</button>
-          <button type="button" class="btn btn-danger action" data-bs-toggle="modal" data-bs-target="#delete<?php echo $fetch['ID']?>" data-bs-whatever="@mdo"><span class="glyphicon glyphicon-edit"></span>Delete</button></td>
-        
+					<td><img src="<?php echo $fetch['IMAGE']?>" height="80" width="100"/></td>
+					<td><?php echo $fetch['TITLE']?></td>
+					<td><?php echo $fetch['DATE']?></td>
+          <td class="pp"><?php echo substr($fetch['PARAGRAPH'],0,1000) ?></td>	
+          <td><button type="button" class="btn btn-warning actionnews" data-bs-toggle="modal" data-bs-target="#edit<?php echo $fetch['ID']?>" data-bs-whatever="@mdo"><span class="glyphicon glyphicon-edit"></span>Update</button>
+          <button type="button" class="btn btn-danger actionnews" data-bs-toggle="modal" data-bs-target="#delete<?php echo $fetch['ID']?>" data-bs-whatever="@mdo"><span class="glyphicon glyphicon-edit"></span>Delete</button></td>
 
-
-          <div class="modal fade" id="delete<?php echo $fetch['ID']?>" aria-hidden="true">
-          <div class="modal-dialog">
+        <div class="modal fade" id="delete<?php echo $fetch['ID']?>" aria-hidden="true">
+	<div class="modal-dialog">
 		<div class="modal-content">
 			<form method="POST" id="updatenews" enctype="multipart/form-data" action="delete.php">
 				<div class="modal-header">
-					<h3 class="modal-title">Delete User</h3>
+					<h3 class="modal-title">Delete News</h3>
 				</div>
 				<div class="modal-body">
 					<div class="col-md-2"></div>
 					<div class="col-md-8 updatenews">
 						<div class="form-group">
-							<label>First Name</label>
+							<h3>Current Photo</h3>
+							<img src="<?php echo $fetch['IMAGE']?>" id="updatelogo" height="120" width="150" />
+							<input type="hidden" name="previous" value="<?php echo $fetch['IMAGE']?>"/>
+							<label>New Photo</label>
+							<input type="file" class="form-control managenewsupdate" name="photodelete" value="<?php echo $fetch['IMAGE']?>" />
+						</div>
+						<div class="form-group">
+							<label>title</label>
 							<input type="hidden" value="<?php echo $fetch['ID']?>" name="user_id"/>
-							<input type="text" class="form-control managenewsupdate" name="firstname" value="<?php echo $fetch['FIRSTNAME']?>" />
+							<input type="text" class="form-control managenewsupdate" value="<?php echo $fetch['TITLE']?>" name="title" required="required"/>
+						</div>
+						<div class="form-group">
+							<label>date</label>
+							<input type="date" class="form-control managenewsupdate" value="<?php echo $fetch['DATE']?>" name="date" required="required"/>
 						</div>
             <div class="form-group">
-							<label>Last Name</label>
-							<input type="text" class="form-control managenewsupdate" name="lastname" value="<?php echo $fetch['LASTNAME']?>" />
+							<label>paragraph</label>
+							<textarea class="form-control managenewsupdate" name="paragraph" required="required" rows="10" col="30" ><?php echo $fetch['PARAGRAPH']?> </textarea>
 						</div>
-          
-            <div class="form-group">
-							<label>Email</label>
-							<input type="text" class="form-control managenewsupdate" name="email" value="<?php echo $fetch['EMAIL']?>" />
-						</div>
-            <div class="form-group type">
-							<label>Type</label>
-              <input type="radio" name="type" value="1" <?php $type=$row['TYPE']; echo ($type== '1') ? "checked" : "" ; ?>>
-              <label>admin</label>
-              <input type="radio" name="type" value="2" <?php $type=$row['TYPE']; echo ($type== '2') ? "checked" : "" ; ?>>
-              <label>user</label>
-						</div>
-
-						
+            
 					</div>
 				</div>
 				<br style="clear:both;"/>
 				<div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-danger" name="deleteuser"><span class="glyphicon glyphicon-save"></span> Delete</button>
+        <button class="btn btn-danger" name="deletenews"><span class="glyphicon glyphicon-save"></span> Delete</button>
       </div>
 			</form>
 		</div>
 	</div>
-</div>			
-          
+</div>	
 
 
 <div class="modal fade" id="edit<?php echo $fetch['ID']?>" aria-hidden="true">
@@ -304,106 +291,97 @@ echo "<li><a class='page-link' href='?page_no=$total_no_of_pages'>Last &rsaquo;&
 		<div class="modal-content">
 			<form method="POST" id="updatenews" enctype="multipart/form-data" action="edit.php">
 				<div class="modal-header">
-					<h3 class="modal-title">Edit User</h3>
+					<h3 class="modal-title">Edit News</h3>
 				</div>
 				<div class="modal-body">
 					<div class="col-md-2"></div>
 					<div class="col-md-8 updatenews">
 						<div class="form-group">
-							<label>First Name</label>
+							<h3>Current Photo</h3>
+							<img src="<?php echo $fetch['IMAGE']?>" id="updatelogo" height="120" width="150" />
+							<input type="hidden" name="previous" value="<?php echo $fetch['IMAGE']?>"/>
+							<label>New Photo</label>
+							<input type="file" class="form-control managenewsupdate" name="photoupdate" value="<?php echo $fetch['IMAGE']?>"/>
+						</div>
+						<div class="form-group">
+							<label>title</label>
 							<input type="hidden" value="<?php echo $fetch['ID']?>" name="user_id"/>
-							<input type="text" class="form-control managenewsupdate" name="firstname" value="<?php echo $fetch['FIRSTNAME']?>" />
+							<input type="text" class="form-control managenewsupdate" value="<?php echo $fetch['TITLE']?>" name="title" required="required"/>
+						</div>
+						<div class="form-group">
+							<label>date</label>
+							<input type="date" class="form-control managenewsupdate" value="<?php echo $fetch['DATE']?>" name="date" required="required"/>
+            
 						</div>
             <div class="form-group">
-							<label>Last Name</label>
-							<input type="text" class="form-control managenewsupdate" name="lastname" value="<?php echo $fetch['LASTNAME']?>" />
-						</div>
-            <div class="form-group">
-							<label>Email</label>
-							<input type="email" class="form-control managenewsupdate" name="email" value="<?php echo $fetch['EMAIL']?>" />
-						</div>
-            <div class="form-group type">
-							<label>Type</label>
-              <input type="radio" name="type" value="1" <?php $type=$row['TYPE']; echo ($type== '1') ? "checked" : "" ; ?>>
-              <label>admin</label>
-              <input type="radio" name="type" value="2" <?php $type=$row['TYPE']; echo ($type== '2') ? "checked" : "" ; ?>>
-              <label>user</label>
+							<label>paragraph</label>
+							<textarea class="form-control managenewsupdate" name="paragraph" rows="10" col="30" required="required" ><?php echo $fetch['PARAGRAPH']?> </textarea>
 						</div>
 
-						
 					</div>
 				</div>
 				<br style="clear:both;"/>
 				<div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-warning" name="updateuser"><span class="glyphicon glyphicon-save"></span> Update</button>
+        <button class="btn btn-warning" name="editnews"><span class="glyphicon glyphicon-save"></span> Update</button>
       </div>
 			</form>
 		</div>
 	</div>
-</div>		
+</div>	
 
-				</tr>
-				<?php
+
+          </tr>
+          <?php
 					}
 				?>
-
 			</tbody> 
         </table>
-
-
-  
-      
-
-<div class="modal fade" id="form_modal" aria-hidden="true">
+        <div class="modal fade" id="form_modal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form method="POST" id="addnews" action="save.php" enctype="multipart/form-data">
 				<div class="modal-header">
-					<h3 class="modal-title">Add User</h3>
+					<h3 class="modal-title">Add News</h3>
 				</div>
 				<div class="modal-body">
 					<div class="col-md-8 addnews">
 						<div class="form-group">
-							<label>First Name</label>
-							<input type="text"  class="form-control managenewsadd" name="firstname" required="required"/>
+							<label>Photo</label>
+							<input type="file"  class="form-control managenewsadd" name="photo" required="required"/>
 						</div>
 						<div class="form-group">
-							<label>Last Name</label>
-							<input type="text" class="form-control managenewsadd" name="lastname" required="required"/>
+							<label>Title</label>
+							<input type="text" class="form-control managenewsadd" name="title" required="required"/>
+						</div>
+						<div class="form-group">
+							<label>Date</label>
+							<input type="date" class="form-control managenewsadd" name="date" required="required"/>
 						</div>
             <div class="form-group">
-							<label>Email</label>
-							<input type="email" class="form-control managenewsadd" name="email" required="required"/>
+							<label>Paragraph</label>
+              <textarea class="form-control managenewsupdate" rows="10" col="30"  name="paragraph" required="required"></textarea>						
             </div>
-            <div class="form-group">
-							<label>Password</label>
-							<input type="password" class="form-control managenewsadd" name="password" required="required"/>
-            </div>
-            <div class="form-group">
-							<label>Confirm Password</label>
-							<input type="password" class="form-control managenewsadd" name="confirmpassword" required="required"/>
-            </div>
-            <div class="form-group type">
-							<label>Type</label>
-              <input type="radio" name="type" value="1" required>
-              <label>admin</label>
-              <input type="radio" name="type" value="2">
-              <label>user</label>
-						</div>
 					</div>
 				</div>
 				<br style="clear:both;"/>
 				<div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button class="btn btn-success" name="saveuser"><span class="glyphicon glyphicon-save"></span> Add</button>
+        <button class="btn btn-success" name="savenews"><span class="glyphicon glyphicon-save"></span> Add</button>
       </div>
 			</form>
 		</div>
 	</div>
-</div>    
+</div>
+	
+
+
 
         </div>
+
+
+
+
         <footer class="text-center text-lg-start bg-light text-muted">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -520,9 +498,6 @@ echo "<li><a class='page-link' href='?page_no=$total_no_of_pages'>Last &rsaquo;&
             </div>
   <!-- Copyright -->
 </footer>
-
-
-
 
 </body>	
 </html>

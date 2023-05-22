@@ -1,4 +1,3 @@
-import ScrollTrigger from '@terwanerik/scrolltrigger'
 
 window.addEventListener('scroll',reveal);
     function reveal()
