@@ -47,7 +47,7 @@ if(!isset($_SESSION['email'])){
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             
       <li class="nav-item"><a class="nav-link fs-5" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link fs-5" href="All_products.php?id=<?php echo md5(0) ?>">Products</a></li>
+      <li class="nav-item"><a class="nav-link fs-5" href="All_Products.php?id=<?php echo md5(0) ?>">Products</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="News.php">News</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="About.html">About Us</a></li>
         <li class="nav-item"><a class="nav-link fs-5" id="login" href="Login-Signup.php">Login</a></li>
@@ -56,8 +56,10 @@ if(!isset($_SESSION['email'])){
             Manage
           </a>
           <ul class="dropdown-menu">
-              <a class="nav-link fs-5" href="ManageProducts.php">News</a>
+              <a class="nav-link fs-5" href="ManageProducts.php">Products</a>
               <a class="nav-link fs-5" href="ManageUsers.php">Users</a>
+              <a class="nav-link fs-5" href="ManageNews.php">News</a>
+
           </ul>
       </li>
 

@@ -13,6 +13,7 @@
 		
 	}
 
+
 	if(ISSET($_POST['deleteuser'])){
 		$user_id = $_POST['user_id'];
 
@@ -25,21 +26,15 @@
 		
 	}
 
-	if(ISSET($_POST['updateuser'])){
+
+	if(ISSET($_POST['deletenews'])){
 		$user_id = $_POST['user_id'];
-		$firstname = $_POST['firstname'];
-    	$lastname = $_POST['lastname'];
-    	$jobplace = $_POST['jobplace'];
-    	$experience = $_POST['experience'];
-    	$degree = $_POST['degree'];
-    	$email = $_POST['email'];
-    	$type = $_POST['type'];
 
 
 			
-				mysqli_query($connect, "UPDATE `users` SET FIRSTNAME='$firstname', LASTNAME='$lastname',JOBPLACE='$jobplace',EXPERIENCE='$experience',DEGREE='$degree',EMAIL='$email',TYPE='$type' WHERE ID=$user_id") or die(mysqli_error());
-				echo"<script>if(!alert('User has been updated'))
-    document.location = 'ManageUsers.php';
+				mysqli_query($connect, "DELETE FROM `news` WHERE ID='$user_id'") or die(mysqli_error());
+				echo"<script>if(!alert('News has been Deleted'))
+    document.location = 'ManageNews.php';
               </script>";
 		
 	}

@@ -121,42 +121,37 @@ img.brands {
 .card-header{
     background-color: white;
 }
-hr{
-    width: 4%;
-    border: 6px dotted #EAF6F6;
-    border-bottom: none;
-    margin: 100px auto;
-}
+
 .fourth_container{
     background-color: white;
 }
 .fourth_container h2{
+    margin: 10% 0;
 color: #73DDC2;
 text-align: center;
 display: block;
 }
 
-.rec_cat {
-    
-    width: 150px;
+.fourth_container a{
+    text-decoration: none;
+}
 
-}
-.rec_cat img{
+img.catagory_img {
+    border-radius: 100px;
+    margin: 0 auto;
+    display: block;
     width: 150px;
-    border-radius: 200px;
-    background-color: #faf0e6;
+    background-color: antiquewhite;
+    filter: drop-shadow(20px 10px 10px #73DDC2);
 }
-.rec_cat span{
-    
-        text-align: center;
-        display: block;
+.catagory_container span{
+        
         color: black;
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin: 10% 0;
     
-}
-.recommendations{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
 
 /* about us */
@@ -192,7 +187,6 @@ background-color: #FFF5EC;
 
  .About_second {
     margin: 30% 10%;
-    opacity: 0;
 }
 .About_second_right img {
     display: block;
@@ -221,6 +215,19 @@ background-color: #FFF5EC;
 .About_second .row .col-lg-4{
     padding: 4% 2% 0 1%;
 }
+/* news */
+img.news_img{
+    object-fit: fill;
+    height: 300px;
+    width: 100%;
+}
+.news_card_header{
+    background-color: white!important;
+}
+.news_container {
+    margin: 0 5%;
+}
+
 
     /* login page */
     signup-h1,login-h1,hello,welcome-back
@@ -625,4 +632,59 @@ button.btn.btn-primary {
     display: inline-block;
     width: 20%;
     background-color: #fAf4f4;
+}
+
+/* responsive */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 768px) { 
+    img#banner{
+        height: 95%;
+    }
+    .first_container_heading{
+        font-size: 170%;
+    }
+    .first-container {
+        height: 30vh;
+        display: flex;
+}
+    
+
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    img#banner{
+       
+        height: 95%;
+    }
+    .first-container {
+        height: 50vh;
+        display: flex;
+}
+   
+}
+       
+
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    img#banner{
+
+        height: 90%;
+    }
+    .first_container_heading{
+        font-size: 370%;
+    }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    img#banner{
+
+        height: 90%;
+    }
+    .first_container_heading{
+        font-size: 370%;
+    }
 }

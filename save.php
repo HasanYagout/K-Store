@@ -54,4 +54,29 @@
 	}
 
 
+
+	if(ISSET($_POST['savenews'])){
+		$image_name = $_FILES['photo']['name'];
+		$image_temp = $_FILES['photo']['tmp_name'];
+		$title = $_POST['title'];
+		$date=$_POST['date'];
+		$paragraph=$_POST['paragraph'];
+		$exp = explode(".", $image_name);
+		$end = end($exp);
+		$name = time().".".$end;
+		$path = "upload/".$name;
+		$allowed_ext = array("gif", "jpg", "jpeg", "png");
+		if(in_array($end, $allowed_ext)){
+			if(move_uploaded_file($image_temp, $path)){
+				mysqli_query($connect, "INSERT INTO `news` VALUES('', '$title', '$date', '$paragraph', '$path')") or die(mysqli_error());
+				echo"<script>if(!alert('News has been Added'))
+    				document.location = 'ManageNews.php';
+              		</script>";
+			}	
+		}else{
+			echo "<script>alert('Error')</script>";
+		}
+	}
+
+
 ?>

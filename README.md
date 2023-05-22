@@ -1,2 +1,0 @@
-# K-Store
-#jj

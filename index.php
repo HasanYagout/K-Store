@@ -14,12 +14,17 @@
             rel="stylesheet"
             integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
             crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+
         <script
+        link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"
+
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <link rel="icon" type="image/x-icon" href="Images/logo.ico">
+    
     <title>Home</title>
 </head>
 <body>
@@ -58,10 +63,10 @@
   </div>
 </nav>
 <div class="first-container">
-<img id="banner" src="Images/7.png" alt="">
+<img id="banner" src="Images/skincare3.png" alt="">
 
   <div class="left">
-    <h1 class="first_container_heading" >Grow up your skin with the power of natural product.</h1>
+    <h1 class="first_container_heading" >something </h1>
 
   </div>
   
@@ -69,7 +74,7 @@
 
 <div class="second_container ">
   
-<div class="row">
+<div class="row gy-5">
 <?php
 $cosrx='cosrx';
 $somebymi='somebymi';
@@ -136,6 +141,7 @@ $ekel='ekel';
   <h2>BRANDS</h2>
 <div class="row gy-5">
 
+
 <div class="col-lg-3 col-md-6">
     <div class="card">
         <div class="card-header">
@@ -152,7 +158,7 @@ $ekel='ekel';
         </div>
     </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -160,7 +166,7 @@ $ekel='ekel';
         </div>
 </div>
    
-<div class=" col-lg-3 col-md-12">
+<div class=" col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/somebymi-logo.png" alt="">
@@ -168,7 +174,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -176,7 +182,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -184,7 +190,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -192,7 +198,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -200,7 +206,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -208,7 +214,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class=" col-lg-3 col-md-12">
+<div class=" col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -216,7 +222,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class=" col-lg-3 col-md-12">
+<div class=" col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -224,7 +230,7 @@ $ekel='ekel';
         </div>
 </div>
 
-<div class="col-lg-3 col-md-12">
+<div class="col-lg-3 col-md-6">
 <div class="card">
         <div class="card-header">
             <img class="brands" src="Images/farmstay-logo.png" alt="">
@@ -235,41 +241,87 @@ $ekel='ekel';
 
 </div>
 </div>
-<hr>
-<div class="fourth_container">
+
+<div class="fourth_container row">
   <h2>RECOMMENDED CATEGORIES</h2>
-  <div class="recommendations">
+  <div class="row">
 
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Face Mask</span>
+    </div>
    
-  <a href="Products.php?id=<?php echo md5('face mask') ?>"><div class="rec_cat">
-    <img src="Images/l.png" alt="">
-    <span>Lorem Ipsum</span>
-  </div></a>
+    
+</a>
+   </div>
+ 
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Serum</span>
+    </div>
+   
+    
+</a>
+   </div>
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+ <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+    <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+  
+   
+    
+</a>
+   </div>
 
-  <div class="rec_cat">
-  <img src="Images/l.png" alt="">
-  <span>Lorem Ipsum</span>
-  </div>
+
+ <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+   
+    
+</a>
+   </div>
+
+
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+   
+    
+</a>
+   </div>
+
+   <div class="col-lg-2">
+   <a href="Products.php?id=<?php echo md5('face mask')?>">
+
+   <div class="catagory_container">
+    <img class="catagory_img" src="Images/l.png" alt="">
+        <span>Lorem Ipsum</span>
+    </div>
+   
+    
+</a>
+   </div>
+
 
   </div>
 </div>
