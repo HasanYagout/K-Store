@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script type="text/javascript" src="../K-Store/index.js">
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Montserrat&display=swap" rel="stylesheet">
     <link
@@ -62,13 +66,22 @@
     </div>
   </div>
 </nav>
-<div class="first-container">
-<img id="banner" src="Images/skincare3.png" alt="">
 
-  <div class="left">
-    <h1 class="first_container_heading" >something </h1>
+<div class="first-container row">
 
+<div class="col-lg-6">
+<button>SHOP NOW</button>
+  <img class="banner" src="Images/banner2.jpg" alt="">
+ 
   </div>
+
+<div class="col-lg-6">
+<img class="banner"  src="Images/banner1.jpeg" alt="">
+<h1>SKINCARE</h1>
+<h2>Natural Beauty</h2>
+</div>
+
+  
   
 </div>
 
@@ -276,7 +289,7 @@ $ekel='ekel';
    <a href="Products.php?id=<?php echo md5('face mask')?>">
     <div class="catagory_container">
     <img class="catagory_img" src="Images/l.png" alt="">
-        <span>Lorem Ipsum</span>
+        <span>Sunscreen</span>
     </div>
   
    
