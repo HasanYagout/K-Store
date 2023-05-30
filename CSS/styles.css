@@ -22,6 +22,48 @@ body{
 .first-container {
     height: 80vh;
     display: flex;
+    background-color: #73DDC2;
+}
+.first-container .col-lg-6{
+width: 50%;
+padding: 0;
+}
+
+.first-container .col-lg-6 h1 {
+    top: 220px;
+    position: absolute;
+    right: 150px;
+    font-size: 6vw;
+    color:antiquewhite ;
+   font-family: serif;
+}
+
+.first-container .col-lg-6 h2 {
+    top: 350px;
+    position: absolute;
+    right: 150px;
+    color: antiquewhite;
+    font-family: 'Sacramento', cursive;
+    font-size: 3.5vw;
+    /* font-weight: bold; */
+}
+
+.first-container .col-lg-6 button {
+    font-size: 1.5vw;
+    width: 200px;
+    background-color: #73DDC2;
+    position: absolute;
+    color: antiquewhite;
+    border-color: unset;
+    top: 570px;
+    left: 150px;
+    height: 60px;
+    filter: drop-shadow(0 0 0.75rem #73DDC2);
+}
+img.banner {
+    width: 100%;
+    height: 550px;
+    /* object-fit: contain; */
 }
 .left {
     height: 65vh;
@@ -659,7 +701,7 @@ button.btn.btn-primary {
         height: 95%;
     }
     .first-container {
-        height: 50vh;
+        height: 80vh;
         display: flex;
 }
    
