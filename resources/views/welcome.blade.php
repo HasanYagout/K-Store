@@ -80,6 +80,191 @@
         </div>
 
     </div>
+    <div class="third_container row">
+        <h2>BRANDS</h2>
+        <div class="row gy-5">
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/cosrx-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img  class="brands" src="{{asset('storage/Images/ekel-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class=" col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/somebymi-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <img class="brands" src="{{asset('storage/Images/farmstay-logo.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="fourth_container row">
+        <h2>RECOMMENDED CATEGORIES</h2>
+        <div class="row">
+
+            <div class="col-lg-2">
+                <a href="Products.php?id=<?php echo md5('Masks')?>">
+
+                    <div class="catagory_container">
+                        <img class="catagory_img" src="{{asset('storage/Images/l.png')}}" alt="">
+                        <span>Masks</span>
+                    </div>
+
+
+                </a>
+            </div>
+
+
+            <div class="col-lg-2">
+                <a href="Products.php?id=<?php echo md5('Face Exfoliates')?>">
+
+                    <div class="catagory_container">
+                        <img class="catagory_img" src="{{asset('storage/Images/l.png')}}" alt="">
+                        <span>Face Exfoliates</span>
+                    </div>
+
+
+                </a>
+            </div>
+
+
+            <div class="col-lg-2">
+                <a href="Products.php?id=<?php echo md5('Face cleansers')?>">
+                    <div class="catagory_container">
+                        <img class="catagory_img" src="{{asset('storage/Images/l.png')}}" alt="">
+                        <span>Face cleansers</span>
+                    </div>
+
+
+
+                </a>
+            </div>
+
+
+            <div class="col-lg-2">
+                <a href="Products.php?id=<?php echo md5('Face Serums')?>">
+
+                    <div class="catagory_container">
+                        <img class="catagory_img" src="{{asset('storage/Images/l.png')}}" alt="">
+                        <span>Face Serums</span>
+                    </div>
+
+
+                </a>
+            </div>
+
+
+            <div class="col-lg-2">
+                <a href="Products.php?id=<?php echo md5('Face Creams')?>">
+
+                    <div class="catagory_container">
+                        <img class="catagory_img" src="{{asset('storage/Images/l.png')}}" alt="">
+                        <span>Face Creams</span>
+                    </div>
+
+
+                </a>
+            </div>
+
+            <div class="col-lg-2">
+                <a href="Products.php?id=<?php echo md5('Suncreams')?>">
+
+                    <div class="catagory_container">
+                        <img class="catagory_img" src="{{asset('storage/Images/l.png')}}" alt="">
+                        <span>Suncreams</span>
+                    </div>
+
+
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
     <script>
 
         window.addEventListener('scroll',reveal);

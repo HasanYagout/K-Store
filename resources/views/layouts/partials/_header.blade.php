@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="Images/logo.jpeg" alt="logo" width="100" height="100">
+            <img src="{{asset('storage/Images/logo.jpeg')}}" alt="logo" width="100" height="100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
                 <li class="nav-item"><a class="nav-link fs-5" href="All_products.php?id=<?php echo md5(0) ?>">Products</a></li>
                 <li class="nav-item"><a class="nav-link fs-5" href="News.php">News</a></li>
                 <li class="nav-item"><a class="nav-link fs-5" href="About.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link fs-5" id="login" href="Login-Signup.php">Login</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" id="login" href="login">Login</a></li>
                 <li class="dropdown-center nav-item">
                     <a class=" dropdown-toggle nav-link fs-5" data-bs-toggle="dropdown" aria-expanded="false">
                         Manage

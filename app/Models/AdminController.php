@@ -12,7 +12,6 @@ class AdminController extends Model
     public function index()
     {
         $adminside=AdminSideBar::all();
-
         return view('dashboard',compact('adminside'));
     }
 }
